@@ -1,6 +1,7 @@
 package br.ce.wcaquino.taskbackend;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDate;
 
@@ -15,5 +16,11 @@ public class DateUtilsTest {
         LocalDate before = LocalDate.of(2000, 1, 1);
         boolean result = DateUtils.isEqualOrFutureDate(before);
         assertFalse(result);
+    }
+    @Test
+    public void isAfter() {
+        LocalDate before = LocalDate.of(2100, 1, 1);
+        boolean result = DateUtils.isEqualOrFutureDate(before);
+        assertTrue(result);
     }
 }
