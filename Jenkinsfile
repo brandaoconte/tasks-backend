@@ -40,5 +40,10 @@ pipeline{
                 sh 'docker build -t backend .'
             }
         }
+         stage('clean'){
+            steps {
+                sh 'docker stop tasks'
+            }
+        }
     }
 }
