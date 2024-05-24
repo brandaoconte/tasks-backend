@@ -16,7 +16,7 @@ pipeline{
                 sh 'mvn test'
             }
         }
-        stage('sonarqube'){
+        stage('sonar'){
             environment{
                 scanner = tools 'sonar_scanner'
             }
