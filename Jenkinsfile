@@ -18,10 +18,10 @@ pipeline{
         }
         stage('sonar'){
             environment{
-                scanner = tools 'sonar_scanner'
+                scanner = tools 'sonar'
             }
             steps{
-                withSonarQubeEnvi('sonar'){
+                withSonarQubeEnvi('sonarqube'){
                 sh "${scanner}/bin/sonar-scanner -e -Dsonar.host.url=http://http://172.27.1.1:9000 -Dsonar.projectKey=Backend -Dsonar.java.binaries=target -Dsonar.exclusions=src/test/**"
 
             }
