@@ -34,6 +34,11 @@ pipeline{
                     waitForQualityGate abortPipeline:true, credentialsId: 'token_sonar'
                 }
             }
-        } 
+        }
+        stage('BuildImage'){
+            steps {
+                sh 'docker build -t backend .'
+            }
+        }
     }
 }
