@@ -16,12 +16,16 @@ pipeline{
                 sh 'mvn test'
             }
         }
-        stage('sonar'){
+        stage('sonarqube'){
             environment{
                 scanner = tools 'sonar_scanner'
             }
-            withSonarQubeEnvi('sonarqube'){
+            steps{
+                withSonarQubeEnvi('sonarqube'){
                 sh "${scanner}/bin/sonar-scanner -e -Dsonar.host.url=http://http://172.27.1.1:9000 -Dsonar.projectKey=Backend -Dsonar.java.binaries=target -Dsonar.exclusions=src/test/**"
+
+            }
+            
             }
         } 
     }
