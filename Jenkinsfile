@@ -3,7 +3,7 @@ pipeline{
     tools {
         maven 'maven'
     }
-        stages{
+    stages {
             stage('Build'){
                 steps{
                     sh '''
@@ -26,8 +26,6 @@ pipeline{
                 }
 
             }
-            
-            }
         }
         stage('QualityGate'){
             steps {
@@ -38,3 +36,4 @@ pipeline{
             }
         } 
     }
+}
