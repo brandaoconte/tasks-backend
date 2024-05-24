@@ -1,9 +1,14 @@
 pipeline{
-    agent any 
+    agent any
+    tools {
+        maven 'maven'
+    }
         stages{
-            stage('passo 1'){
+            stage('Build'){
                 steps{
-                    echo 'Até o infinito...'            
+                    sh '''
+                    mvn clean package -DskipTests
+                    '''   
             }        
         }    
     }
