@@ -54,5 +54,12 @@ pipeline{
                 
             }
         }
+        stage('check'){
+            steps {
+                sleep 5
+                sh 'curl -I http://172.27.0.1:8001/todo' 
+                
+            }
+        }
     }
 }
