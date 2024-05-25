@@ -50,7 +50,7 @@ pipeline{
         }
         stage('deploy'){
             steps {
-                sh 'docker run -d --rm --name tasks -e DATABASE_HOST=172.27.0.1 -p 8001:8001 backend'
+                sh 'docker run -d --rm --name tasks -e DATABASE_HOST=172.27.1.1 -p 8001:8001 backend'
                 
             }
         }
